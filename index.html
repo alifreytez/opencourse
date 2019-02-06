@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<link rel="stylesheet" href="css/estilos.css"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Poiret+One" rel="stylesheet"/>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			let menuEstado = false, menuListaSitio = {'cursos':true,'gruposEstudio':true,'foros':true};
+			
+			// Escuchar el evento click en algún elemento de navegacion
+			$('a').click(function (e){
+				e.preventDefault();
+				let enlace = $(this).attr('href');
+				if(enlace == '#'){
+					return false;
+				} else{
+					window.location.href = enlace;
+				}
+			});
+			//Menu usuario
+			$('.ajuste-cont').click(function (){
+				if(!menuEstado){
+					//Mostrar 'menu usuario'
+					$('#menu-usuario').fadeIn(100);
+					menuEstado = true;
+				} else{
+					//Ocultar 'menu usuario'
+					$('#menu-usuario').fadeOut(100);
+					menuEstado = false;
+				}
+			});
+			$("html").click(function(){
+				if(menuEstado){
+			    	$("#menu-usuario").fadeOut(100);
+					menuEstado = false;
+				}
+			});
+			$(".ajuste-cont, #menu-usuario").click(function (e){
+				e.stopPropagation();
+			});
+			//Menu sitio web
+			$('.logotipo i').click(function (){
+				//Comprobacion si no tiene puesta la clase "active"
+				if(!$('.logotipo i').hasClass('active')){
+					//Movilizar el menu (disponible)
+					$('.izq-cont').animate({
+						left: '0',
+					}, 100, function(){
+						$(this).animate({
+							opacity: 1
+						}, 100)
+					});
+					setTimeout(function (){
+						//Agregamos flecha del 'boton menu sitio web'
+						$('.logotipo i').addClass('active', 1000);						
+					}, 300);
+				} else{
+					//Movilizar el menu de retorno (indisponible)
+					$('.izq-cont').animate({
+						left: '-100%'
+					}, 100, function (){
+						$(this).animate({
+							opacity: 0
+						}, 100)
+					});
+					setTimeout(function (){
+						//Removemos flecha del 'boton menu sitio web'
+						$('.logotipo i').removeClass('active', 1000);
+					}, 100);
+				}
+			});
+			//Mostrar/Ocultar elementos 'menu sitio web'
+			$('.titulo-menu-sitio').click(function (){
+				if(menuListaSitio[$(this).attr('id')]){
+					//Ocultar lista encontrada
+					$(this).next().animate({opacity: 0}, 200).delay(200).slideUp(200);
+					$(this).children('i:last-child').removeClass('fa-angle-down').addClass('fa-angle-left');
+					menuListaSitio[$(this).attr('id')] = false;
+				} else{
+					//Mostrar lista encontrada
+					$(this).next().slideDown(200).animate({opacity: 1}, 200);
+					$(this).children('i:last-child').removeClass('fa-angle-left').addClass('fa-angle-down');
+					menuListaSitio[$(this).attr('id')] = true;
+				}
+			});
+		});
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<header>
+		<div class="logotipo">
+			<i class="fas fa-align-center"><div class="flecha"></div></i>
+			<p class="flixat"><span>Flit</span><span>zat</span></p>
+		</div>
+		<div class="enlaces">
+			<ul class="enlaces-sitio">
+				<li><i class="fas fa-feather-alt"></i></li>
+				<li><i class="fas fa-comments"></i></li>
+				<li><i class="fas fa-bell"></i></li>				
+			</ul>
+			<div class="ajuste-cont">
+				<img src="img/user1.jpg" alt="fotografia $user">
+			</div>
+		</div>
+		<ul id="menu-usuario" class="menu-usuario">
+			<li class="nombre">
+				<img src="img/user1.jpg" alt="fotografia $user">
+				<div>
+					<span>Jhon Doe</span>
+					<!--Codigo de busqueda, sera un codigo unico, claro no tendra que ver con el ID de la DB es algo separado, de cada usuario-->
+					<span>#6512</span>
+				</div>
+			</li>
+			<li><i class="fas fa-address-book"></i>Mi cuenta</li>
+			<li><i class="fas fa-user-cog"></i>Privacidad</li>
+			<li><i class="fas fa-heartbeat"></i>Sugerencias</li>
+			<li><i class="fas fa-coffee"></i>Donaciones</li>
+			<li><i class="fas fa-power-off"></i>Desconectarme</li>
+		</ul>
+	</header>
+	<div class="cuerpo">
+		<aside class="izq-cont">
+			<ul class="info-estado">
+				<li>
+					<p class="titulo-menu-sitio" id="cursos"><i class="fas fa-book-open"></i> Mis cursos <i class="fas fa-angle-down"></i></p>
+					<ul class="f-curso">
+						<li>
+							<a href="#"><span>HTML5, CSS3 y JS</span><span class="autor-curso">Alirio</span></a>
+							<div class="progress-bar"><div class="progress"></div></div>
+						</li>
+						<li>
+							<a href="#"><span>ReactJs</span><span class="autor-curso">Alirio</span></a>
+							<div class="progress-bar"><div class="progress"></div></div>
+						</li>
+						<li>
+							<a href="#"><span>Angular</span><span class="autor-curso">Alirio</span></a>
+							<div class="progress-bar"><div class="progress"></div></div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p class="titulo-menu-sitio" id="gruposEstudio"><i class="fas fa-users"></i>Grupos de estudio <i class="fas fa-angle-down"></i></p>
+					<ul class="f-estudio">
+						<li><a href="#">G- <span>Los maestros</span><span class="lider-grupo">Lider Alirio</span></a></li>
+						<li><a href="#">G- <span>Cracksitos por siempre</span><span class="lider-grupo">Lider Alirio</span></a></li>
+						<li><a href="#">G- <span>Equipo Laravel PRO</span><span class="lider-grupo">Lider Alirio</span></a></li>
+					</ul>
+				</li>
+				<li>
+					<p class="titulo-menu-sitio" id="foros"><i class="fas fa-question-circle"></i> Foros creados <i class="fas fa-angle-down"></i></p>
+					<ul class="f-foro">
+						<li><a href="#">F- <span>Tengo un problema con Angular, ayuda por favor</span><span class="res-foro">Re: <i>2</i></span></a></li>
+						<li><a href="#">F- <span>ReactJs no me funciona</span><span class="res-foro">Re: <i>7</i></span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+		<div class="der-cont">
+			<section>
+
+				<div class="cursos-cont">
+					<!--<article>
+						<img src="img/cursoEjemplo.png" alt="curso de $curso">
+						<div class="curso-desc">
+							<h5>Curso de Html5, Css3 & Javascript 1</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error iste enim, iusto atque quae illo!</p>
+							<p class="datos-extras"><span>Por: Alirio Freytez</span><span>Fecha: 10/01/2019</span></p>
+						</div>
+					</article>-->
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
