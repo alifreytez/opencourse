@@ -25,17 +25,18 @@
 			$('.ajuste-cont').click(function (){
 				if(!menuEstado){
 					//Mostrar 'menu usuario'
-					$('#menu-usuario').fadeIn(100);
+					$('#menu-usuario').show(0).delay(100).animate({opacity:1}, 50);
 					menuEstado = true;
 				} else{
 					//Ocultar 'menu usuario'
-					$('#menu-usuario').fadeOut(100);
+					$('#menu-usuario').animate({opacity:0}, 50).delay(100).hide(0);
 					menuEstado = false;
 				}
 			});
 			$("html").click(function(){
 				if(menuEstado){
-			    	$("#menu-usuario").fadeOut(100);
+					//Ocultar 'menu usuario'
+			    	$("#menu-usuario").animate({opacity:0}, 50).delay(100).hide(0);
 					menuEstado = false;
 				}
 			});
@@ -77,12 +78,12 @@
 			$('.titulo-menu-sitio').click(function (){
 				if(menuListaSitio[$(this).attr('id')]){
 					//Ocultar lista encontrada
-					$(this).next().animate({opacity: 0}, 200).delay(200).slideUp(200);
+					$(this).next().animate({opacity: 0}, 50).delay(100).slideUp(200);
 					$(this).children('i:last-child').removeClass('fa-angle-down').addClass('fa-angle-left');
 					menuListaSitio[$(this).attr('id')] = false;
 				} else{
 					//Mostrar lista encontrada
-					$(this).next().slideDown(200).animate({opacity: 1}, 200);
+					$(this).next().slideDown(200).animate({opacity: 1}, 50);
 					$(this).children('i:last-child').removeClass('fa-angle-left').addClass('fa-angle-down');
 					menuListaSitio[$(this).attr('id')] = true;
 				}
@@ -99,7 +100,8 @@
 		</div>
 		<div class="enlaces">
 			<ul class="enlaces-sitio">
-				<li><i class="fas fa-feather-alt"></i></li>
+				<li><a href="#"><i class="fas fa-home"></i></a></li>
+				<li><a href="#"><i class="fas fa-feather-alt"></i></a></li>
 				<li><i class="fas fa-comments"></i></li>
 				<li><i class="fas fa-bell"></i></li>				
 			</ul>
@@ -116,64 +118,76 @@
 					<span>#6512</span>
 				</div>
 			</li>
-			<li><i class="fas fa-address-book"></i>Mi cuenta</li>
-			<li><i class="fas fa-user-cog"></i>Privacidad</li>
-			<li><i class="fas fa-heartbeat"></i>Sugerencias</li>
-			<li><i class="fas fa-coffee"></i>Donaciones</li>
-			<li><i class="fas fa-power-off"></i>Desconectarme</li>
+			<li><a href="#"><i class="fas fa-address-book"></i>Mi cuenta</a></li>
+			<li><a href="#"><i class="fas fa-user-cog"></i>Privacidad</a></li>
+			<li><a href="#"><i class="fas fa-heartbeat"></i>Sugerencias</a></li>
+			<li><a href="#"><i class="fas fa-coffee"></i>Donaciones</a></li>
+			<li><a href="#"><i class="fas fa-power-off"></i>Cerrar sesión</a></li>
 		</ul>
 	</header>
 	<div class="cuerpo">
 		<aside class="izq-cont">
 			<ul class="info-estado">
 				<li>
-					<p class="titulo-menu-sitio" id="cursos"><i class="fas fa-book-open"></i> Mis cursos <i class="fas fa-angle-down"></i></p>
+					<p class="titulo-menu-sitio" id="cursos"><i class="fas fa-book-open"></i> Mis cursos</p>
 					<ul class="f-curso">
 						<li>
 							<a href="#"><span>HTML5, CSS3 y JS</span><span class="autor-curso">Alirio</span></a>
 							<div class="progress-bar"><div class="progress"></div></div>
+							<i class="fas fa-times remover-seccion"></i>
 						</li>
 						<li>
 							<a href="#"><span>ReactJs</span><span class="autor-curso">Alirio</span></a>
 							<div class="progress-bar"><div class="progress"></div></div>
+							<i class="fas fa-times remover-seccion"></i>
 						</li>
 						<li>
 							<a href="#"><span>Angular</span><span class="autor-curso">Alirio</span></a>
 							<div class="progress-bar"><div class="progress"></div></div>
+							<i class="fas fa-times remover-seccion"></i>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<p class="titulo-menu-sitio" id="gruposEstudio"><i class="fas fa-users"></i>Grupos de estudio <i class="fas fa-angle-down"></i></p>
+					<p class="titulo-menu-sitio" id="gruposEstudio"><i class="fas fa-users"></i>Grupos de estudio</p>
 					<ul class="f-estudio">
-						<li><a href="#">G- <span>Los maestros</span><span class="lider-grupo">Lider Alirio</span></a></li>
-						<li><a href="#">G- <span>Cracksitos por siempre</span><span class="lider-grupo">Lider Alirio</span></a></li>
-						<li><a href="#">G- <span>Equipo Laravel PRO</span><span class="lider-grupo">Lider Alirio</span></a></li>
+						<li>
+							<a href="#">+ Crear grupo de estudio</a>
+						</li>
+						<li>
+							<a href="#">G- <span>Los maestros</span><span class="lider-grupo">Lider Alirio</span></a>
+							<i class="fas fa-times remover-seccion"></i>
+						</li>
+						<li><a href="#">G- <span>Cracksitos por siempre</span><span class="lider-grupo">Lider Alirio</span></a>
+	
+							<i class="fas fa-times remover-seccion"></i>
+						</li>
+						<li>
+							<a href="#">G- <span>Equipo Laravel PRO</span><span class="lider-grupo">Lider Alirio</span></a>
+							<i class="fas fa-times remover-seccion"></i>
+						</li>
 					</ul>
 				</li>
 				<li>
-					<p class="titulo-menu-sitio" id="foros"><i class="fas fa-question-circle"></i> Foros creados <i class="fas fa-angle-down"></i></p>
+					<p class="titulo-menu-sitio" id="foros"><i class="fas fa-question-circle"></i> Foros creados</p>
 					<ul class="f-foro">
-						<li><a href="#">F- <span>Tengo un problema con Angular, ayuda por favor</span><span class="res-foro">Re: <i>2</i></span></a></li>
-						<li><a href="#">F- <span>ReactJs no me funciona</span><span class="res-foro">Re: <i>7</i></span></a></li>
+						<li>
+							<a href="#">+ Iniciar discusión</a>
+						</li>
+						<li>
+							<a href="#">F- <span>Tengo un problema con Angular, ayuda por favor</span><span class="res-foro">Re: <i>2</i></span></a>
+							<i class="fas fa-times remover-seccion"></i>
+						</li>
+						<li>
+							<a href="#">F- <span>ReactJs no me funciona</span><span class="res-foro">Re: <i>7</i></span></a>
+							<i class="fas fa-times remover-seccion"></i>
+						</li>
 					</ul>
 				</li>
 			</ul>
 		</aside>
 		<div class="der-cont">
-			<section>
 
-				<div class="cursos-cont">
-					<!--<article>
-						<img src="img/cursoEjemplo.png" alt="curso de $curso">
-						<div class="curso-desc">
-							<h5>Curso de Html5, Css3 & Javascript 1</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error iste enim, iusto atque quae illo!</p>
-							<p class="datos-extras"><span>Por: Alirio Freytez</span><span>Fecha: 10/01/2019</span></p>
-						</div>
-					</article>-->
-				</div>
-			</section>
 		</div>
 	</div>
 </body>
