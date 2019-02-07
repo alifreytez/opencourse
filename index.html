@@ -74,20 +74,6 @@
 					}, 100);
 				}
 			});
-			//Mostrar/Ocultar elementos 'menu sitio web'
-			$('.titulo-menu-sitio').click(function (){
-				if(menuListaSitio[$(this).attr('id')]){
-					//Ocultar lista encontrada
-					$(this).next().animate({opacity: 0}, 50).delay(100).slideUp(200);
-					$(this).children('i:last-child').removeClass('fa-angle-down').addClass('fa-angle-left');
-					menuListaSitio[$(this).attr('id')] = false;
-				} else{
-					//Mostrar lista encontrada
-					$(this).next().slideDown(200).animate({opacity: 1}, 50);
-					$(this).children('i:last-child').removeClass('fa-angle-left').addClass('fa-angle-down');
-					menuListaSitio[$(this).attr('id')] = true;
-				}
-			});
 		});
 	</script>
 	<title>Document</title>
