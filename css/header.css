@@ -1,0 +1,109 @@
+header{
+	background: #fff;
+	/*background-image: linear-gradient(to right, #020403, #0e1d16, #103122, #11462d, #115c38);*/
+	/*background-image: linear-gradient(to right, #020403, #0e1d16, #103122, #11462d, #115c38);*/
+	/*background-image: linear-gradient(to left, #1d1d1d, #27202d, #392037, #4f1c3b, #661236);*/
+	/*background-image: linear-gradient(to right, #112841, #122a44, #132c46, #142f49, #15314c);*/
+	/*background-image: linear-gradient(to right, #112439, #27264b, #4a2151, #6d1247, #87002f);*/
+	/*background-image: linear-gradient(to right, #0f4244, #005b56, #00755f, #008f61, #27a85a);*/
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	z-index: 100;
+	-webkit-box-shadow: 0 0 8px 3px rgba(0,0,0,.2);
+	box-shadow: 0 0 8px 3px rgba(0,0,0,.2);
+}
+/*- LOGOTIPO -*/
+.logotipo{
+	float: left;
+}
+.logotipo i{
+	display: block;
+	font-size: 1.3em;
+	padding: 15px;
+	float: left;
+	color: #666;
+	cursor: pointer;
+	border-right: 1px solid rgba(0,0,0,.2);
+}
+.logotipo i.active{
+	position: relative;
+}
+.logotipo i.active::after{
+	content:" ";
+	border:10px solid transparent;
+	border-top-color:#fff;
+	border-bottom-width:0;
+	position: absolute;
+	bottom:-10px;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	left:50%;
+}
+.nombre-sitio{
+	float:left;
+	margin:5px 20px 0 20px;
+	padding:3px;
+	font: 28px 'Poiret One', cursive;
+	color: #00cc66;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+	/* NAVEGACION SITIO WEB */
+nav{
+	overflow: hidden;
+}
+.enlaces-sitio{
+	list-style:none;
+}
+.enlaces-sitio li{
+	float:left;
+	margin:5px 0;
+}
+.enlaces-sitio li a{
+	text-decoration:none;
+	color:#666;
+	padding:10.5px;
+	display:block;
+}.enlaces-sitio li a.pag-actual{
+	border-bottom:5px solid #0c6;
+}
+/*- OTROS ENLACES -*/
+.menu-sitio{
+	float: right;
+	padding:7px;
+}
+.menu-sitio-opciones{
+	float: left;
+	margin-right: 10px;
+}
+.menu-sitio-opciones > li{
+	float: left;
+	list-style: none;
+	margin-right: 8px;
+}
+.menu-sitio-opciones > li > i,.menu-sitio-opciones > li > a,.menu-sitio-opciones > li > a i{
+	display:block;
+	margin-top: 2px;
+	cursor:pointer;
+	width:33px;
+	height:33px;
+	color: #666;
+	font-size: 1.1em;
+	text-align:center;
+	padding-top:8px;
+	border-radius: 50%;
+}
+.menu-sitio-opciones > li > a{
+	padding:0;
+	margin:0;
+	text-decoration:none;
+}
+.menu-sitio-opciones > li > i:hover{
+	background: rgba(0,0,0,.05);
+}
+.menu-sitio-opciones > li:last-child{
+	margin-right:0;
+}

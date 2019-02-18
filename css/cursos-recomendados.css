@@ -1,0 +1,62 @@
+/* Cursos recomendados */
+section h2{
+	margin-bottom:10px;
+	font-weight:lighter;
+}
+article{
+	width:calc(100% / 4 - 20px);
+	margin-top: 20px;
+}
+article:nth-child(1), article:nth-child(2), article:nth-child(3), article:nth-child(4) {
+	margin-top:0;
+}
+article a{
+	display:block;
+	text-decoration:none;
+}
+article a > img{
+	width:100%;
+	display:block;
+	height:230px;
+}
+.curso-desc{
+	border-left:1px solid rgba(0,0,0,.1);
+	border-right:1px solid rgba(0,0,0,.1);
+	border-bottom: 5px solid #0c6;
+	padding:15px;
+	height:205px;
+}
+.curso-desc h3{
+	overflow:hidden;
+	font-size:1.1em;
+	color:#4a4a4a;
+	height:45px;
+}
+.curso-desc > p{
+	overflow:hidden;
+	font-size:.9em;
+	color:#666;
+	height:54px;
+	margin:20px 0;
+}
+.curso-autor{
+	overflow:hidden;
+}
+.curso-autor img{
+	display:block;
+	width:30px;
+	height:30px;
+	border:1px solid rgba(0,0,0,.1);
+	border-radius:50%;
+	margin-right: 8px;
+	float:left;
+}
+.curso-autor h4{
+	font-weight: lighter;
+	font-size:.9em;
+	color:#7d7d7d;
+	margin-top:6px;
+}
+.curso-autor .verificado{
+	color:#00994d;
+}

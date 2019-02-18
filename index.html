@@ -3,7 +3,12 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-	<link rel="stylesheet" href="css/estilos.css"/>
+	<link rel="stylesheet" href="css/general.css">
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/header.css"/>
+	<link rel="stylesheet" href="css/footer.css"/>
+	<link rel="stylesheet" href="css/bloque-izq.css">
+	<link rel="stylesheet" href="css/cursos-recomendados.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Poiret+One" rel="stylesheet"/>
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -47,8 +52,12 @@
 			$('.logotipo i').click(function (){
 				//Comprobacion si no tiene puesta la clase "active"
 				if(!$('.logotipo i').hasClass('active')){
+					//Mostrar sección menu
+					$('.izq-cont').show(0).animate({
+						opacity:1
+					}, 10);
 					//Movilizar el menu (disponible)
-					$('.izq-cont').animate({
+					$('.izq-fondo').animate({
 						left: '0',
 					}, 100, function(){
 						$(this).animate({
@@ -56,15 +65,14 @@
 						}, 100)
 					});
 					setTimeout(function (){
-						$('.der-cont').css('margin-left','300px');
-					}, 120);
-					setTimeout(function (){
 						//Agregamos flecha del 'boton menu sitio web'
-						$('.logotipo i').addClass('active', 1000);						
-					}, 300);
+						$('.logotipo i').addClass('active');						
+					}, 280);
 				} else{
+					//Ocultar sección menu
+					$('.izq-cont').animate({opacity:0}, 50).delay(1000).hide(0);
 					//Movilizar el menu de retorno (indisponible)
-					$('.izq-cont').animate({
+					$('.izq-fondo').animate({
 						left: '-100%'
 					}, 100, function (){
 						$(this).animate({
@@ -72,17 +80,14 @@
 						}, 100)
 					});
 					setTimeout(function (){
-						$('.der-cont').css('margin-left','0px');
-					}, 50);
-					setTimeout(function (){
 						//Removemos flecha del 'boton menu sitio web'
 						$('.logotipo i').removeClass('active', 1000);
 					}, 100);
 				}
 			});
 			//Quitamos el margen-right de cada quinto elemento de 'article'
-			let quitarMarginArt = document.getElementsByClassName('cont-flex')[0].getElementsByTagName('article');
-			quitarMarginArt[4].style.marginRight = 0;
+			/*let quitarMarginArt = document.getElementsByClassName('cont-flex')[0].getElementsByTagName('article');
+			quitarMarginArt[4].style.marginRight = 0;*/
 		});
 	</script>
 	<title>Document</title>
@@ -91,111 +96,93 @@
 	<header>
 		<div class="logotipo">
 			<i class="fas fa-align-center"><div class="flecha"></div></i>
-			<p class="flixat"><span>Flit</span><span>zat</span></p>
+			<p class="nombre-sitio">Freeteach</p>
+			<nav>
+				<ul class="enlaces-sitio">
+					<li><a href="#">Cursos</a></li>
+					<li><a href="#">Enseña</a></li>
+					<li><a href="#">Discusiones</a></li>
+				</ul>
+			</nav>
 		</div>
+		<div></div>
 		<div class="menu-sitio">
 			<ul class="menu-sitio-opciones">
 				<li><a href="#"><i class="fas fa-home"></i></a></li>
-				<li><i class="fas fa-grip-vertical"></i>
-					<!--<ul class="enlaces-sitio">
-						<li><a href="#"><i class="fas fa-book-open"></i> Cursos</a></li>
-						<li><a href="#"><i class="fas fa-users"></i>Grupos de estudio</a></li>
-						<li><a href="#"><i class="fas fa-question-circle"></i> Dicusiones</a></li>
-					</ul>-->
-				</li>
 				<li><i class="fas fa-bell"></i></li>				
 			</ul>
-			<div class="ajuste-cont">
-				<img src="img/user1.jpg" alt="fotografia $user">
-			</div>
 		</div>
-		<ul id="menu-usuario" class="menu-usuario">
-			<li class="nombre">
-				<img src="img/user1.jpg" alt="fotografia $user">
-				<div>
-					<span>Jhon Doe</span>
-					<!--Codigo de busqueda, sera un codigo unico, claro no tendra que ver con el ID de la DB es algo separado, de cada usuario-->
-					<span>#6512</span>
-				</div>
-			</li>
-			<li><a href="#"><i class="fas fa-address-book"></i>Mi cuenta</a></li>
-			<li><a href="#"><i class="fas fa-user-cog"></i>Privacidad</a></li>
-			<li><a href="#"><i class="fas fa-heartbeat"></i>Sugerencias</a></li>
-			<li><a href="#"><i class="fas fa-coffee"></i>Donaciones</a></li>
-			<li><a href="#"><i class="fas fa-power-off"></i>Cerrar sesión</a></li>
-		</ul>
 	</header>
 	<div class="cuerpo">
 		<aside class="izq-cont">
-			<ul class="info-estado">
-				<li>
-					<p id="misCursos"><i class="fas fa-book-open"></i> Mis cursos</p>
-					<ul class="f-curso">
-						<li>
-							<a href="#"><span>HTML5, CSS3 y JS</span><span class="autor-curso">Alirio</span></a>
-							<div class="progress-bar"><div class="progress"></div></div>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-						<li>
-							<a href="#"><span>ReactJs</span><span class="autor-curso">Alirio</span></a>
-							<div class="progress-bar"><div class="progress"></div></div>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-						<li>
-							<a href="#"><span>Angular</span><span class="autor-curso">Alirio</span></a>
-							<div class="progress-bar"><div class="progress"></div></div>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p id="misGruposEstudio"><i class="fas fa-users"></i>Mis grupos de estudio</p>
-					<ul class="f-estudio">
-						<li>
-							<a href="#">+ Crear grupo de estudio</a>
-						</li>
-						<li>
-							<a href="#">G- <span>Los maestros</span><span class="lider-grupo">Lider Alirio</span></a>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-						<li><a href="#">G- <span>Cracksitos por siempre</span><span class="lider-grupo">Lider Alirio</span></a>
-	
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-						<li>
-							<a href="#">G- <span>Equipo Laravel PRO</span><span class="lider-grupo">Lider Alirio</span></a>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p id="misDiscusiones"><i class="fas fa-question-circle"></i> Mis discusiones</p>
-					<ul class="f-discusion">
-						<li>
-							<a href="#">+ Iniciar discusión</a>
-						</li>
-						<li>
-							<a href="#">F- <span>Tengo un problema con Angular, ayuda por favor</span><span class="res-discusion">Re: <i>2</i></span></a>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-						<li>
-							<a href="#">F- <span>ReactJs no me funciona</span><span class="res-discusion">Re: <i>7</i></span></a>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-					</ul>
-				</li>
-			</ul>
+			<div class="izq-fondo">
+				<ul class="menu-usuario">
+					<li class="nombre">
+						<img src="img/user1.jpg" alt="fotografia $user">
+						<div>
+							<span>Jhon Doe <i class="fas fa-award verificado"></i></span>
+							<!--Codigo de busqueda, sera un codigo unico, claro no tendra que ver con el ID de la DB es algo separado, de cada usuario-->
+							<span>#6512</span>
+						</div>
+					</li>
+					<li><a href="#"><i class="far fa-user-circle"></i>Mi cuenta</a></li>
+					<li><a href="#"><i class="fas fa-heartbeat"></i>Sugerencias</a></li>
+					<!--<li><a href="#"><i class="fas fa-adjust"></i>Modo: <span>Oscuro</span></a></li>-->
+					<li><a href="#"><i class="fas fa-power-off"></i>Cerrar sesión</a></li>
+				</ul>
+				<ul class="info-estado">
+					<li>
+						<p id="misCursos"><i class="fas fa-book-open"></i> Mis cursos</p>
+						<ul class="f-curso">
+							<li>
+								<a href="#"><span>HTML5, CSS3 y JS<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
+								<div class="progress-bar"><div class="progress"></div></div>
+							</li>
+							<li>
+								<a href="#"><span>ReactJs<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
+								<div class="progress-bar"><div class="progress"></div></div>
+							</li>
+							<li>
+								<a href="#"><span>Angular<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
+								<div class="progress-bar"><div class="progress"></div></div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p id="misGruposEstudio"><i class="fas fa-users"></i>Mis grupos de estudio</p>
+						<ul class="f-estudio">
+							<li>
+								<a href="#">+ Crear grupo de estudio</a>
+							</li>
+							<li>
+								<a href="#"><span>G- Los maestros<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
+							</li>
+							<li><a href="#"><span>G- Cracksitos por siempre<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
+							</li>
+							<li>
+								<a href="#"><span>G- Equipo Laravel PRO<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p id="misDiscusiones"><i class="fas fa-question-circle"></i> Mis discusiones</p>
+						<ul class="f-discusion">
+							<li>
+								<a href="#">+ Iniciar discusión</a>
+							</li>
+							<li>
+								<a href="#"><span>F- Tengo un problema con Angular, ayuda por favor<i class="fas fa-times remover-seccion"></i></span><span class="res-discusion">Re: <i>2</i></span></a>
+							</li>
+							<li>
+								<a href="#"><span>F- ReactJs no me funciona</span><span class="res-discusion">Re: <i>7</i></span></a>
+								<i class="fas fa-times remover-seccion"></i>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</aside>
 		<div class="der-cont">
-			<div class="margen-general">
-				<nav>
-					<ul class="enlaces-sitio">
-						<li><a href="#"><i class="fas fa-book-open"></i> Cursos</a></li>
-						<li><a href="#"><i class="fas fa-users"></i>Grupos de estudio</a></li>
-						<li><a href="#"><i class="fas fa-question-circle"></i> Dicusiones</a></li>
-					</ul>
-				</nav>
-			</div>
 			<div class="margen-general">
 				<form action="" autocomplete="off" method="get" class="buscar-curso">
 					<input type="text" id="input-busqueda" name="curso" placeholder="Buscar curso">
@@ -203,103 +190,114 @@
 				</form>
 			</div>
 			<div class="margen-general">
-				<section class="cursos-recientes">
-					<h2>Continúa aprendiendo</h2>
-					<div class="cont-cursos">
-						<div class="cont-flex">
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+				<section class="cursos-recomendados">
+					<h2>Cursos recomendados</h2>
+					<div class="cont-flex">
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, optio.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos earum doloribus nisi aperiam nobis quisquam.</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+								</div>
+							</a>
+						</article>
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">NodeJS - Haz único tu servidor, configurándolo desde cero</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, suscipit!</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+								</div>
+							</a>
+						</article>
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, quos!</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+								</div>
+							</a>
+						</article>
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, optio?</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+								</div>
+							</a>
+						</article>
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, vitae!</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+								</div>
+							</a>
+						</article>
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, vitae.</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit in laboriosam enim illum animi officiis fugiat veritatis praesentium. Tempore, vel.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+								</div>
+							</a>
+						</article>
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, aut.</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
+								</div>
+							</a>
+						</article>
+						<article>
+							<a href="#">
+								<img src="img/curso.jpg" alt="curso tal">
+								<div class="curso-desc">
+									<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, commodi?</p>
+									<div class="curso-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
 									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
-									</div>
-								</a>
-							</article>
-							<article>
-								<a href="#">
-									<img src="img/curso.jpg" alt="curso tal">
-									<div class="curso-desc">
-										<h3 class="curso-nombre">Lorem ipsum dolor sit amet.</h3>
-										<h4 class="curso-autor">Alirio Freytez</h4>
-									</div>
-								</a>
-							</article>
-						</div>
+								</div>
+							</a>
+						</article>
 					</div>
-					<button type="button" class="flecha-izq"><i class="fas fa-angle-left"></i></button><button type="button" class="flecha-der"><i class="fas fa-angle-right"></i></button>
 				</section>
 			</div>
 			<div class="margen-general">
@@ -325,25 +323,57 @@
 						<div class="discusion">
 							<a href="#">
 								<h3>¿Firefox piensa usar el motor Chromium?</h3>
-								<p>Alirio Freytez</p>
+								<div class="cont-flex">
+									<div class="discusion-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+									</div>
+									<div class="discusion-info">
+										<p>12 resp.</p>
+									</div>
+								</div>
 							</a>
 						</div>
 						<div class="discusion">
 							<a href="#">
 								<h3>¿Firefox piensa usar el motor Chromium?</h3>
-								<p>Alirio Freytez</p>
+								<div class="cont-flex">
+									<div class="discusion-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+									</div>
+									<div class="discusion-info">
+										<p>12 resp.</p>
+									</div>
+								</div>
 							</a>
 						</div>
 						<div class="discusion">
 							<a href="#">
 								<h3>¿Firefox piensa usar el motor Chromium?</h3>
-								<p>Alirio Freytez</p>
+								<div class="cont-flex">		
+									<div class="discusion-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+									</div>
+									<div class="discusion-info">
+										<p>12 resp.</p>
+									</div>
+								</div>
 							</a>
 						</div>
 						<div class="discusion">
 							<a href="#">
 								<h3>¿Firefox piensa usar el motor Chromium?</h3>
-								<p>Alirio Freytez</p>
+								<div class="cont-flex">
+									<div class="discusion-autor">
+										<img src="img/user1.jpg" alt="fotografia $user">
+										<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+									</div>
+									<div class="discusion-info">
+										<p>12 resp.</p>
+									</div>
+								</div>
 							</a>
 						</div>
 					</div>
@@ -371,9 +401,9 @@
 				</div>
 				<div class="margen-general">
 					<ul class="cont-flex">
-						<li><a href="#">Contacto</a></li>
 						<li><a href="#">Términos y condiciones</a></li>
 						<li><a href="#">Privacidad</a></li>
+						<li><a href="#">Contacto</a></li>
 					</ul>
 				</div>
 			</footer>

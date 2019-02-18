@@ -1,0 +1,36 @@
+*{
+	padding: 0;
+	margin: 0;
+	-webkit-transition: .3s all ease;
+	-o-transition: .3s all ease;
+	transition: .3s all ease;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body,html{
+	height: 100%;
+	font: 16px 'Roboto', sans-serif, arial, helvetica;
+	background: ;/*rgba(0,0,0,.02);*/
+}
+.margen-general{
+	width:80%;
+	margin:0 auto;
+	margin-top: 40px;
+}
+.margen-general:first-child{
+	margin-top: 0;
+}
+.cont-flex{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}

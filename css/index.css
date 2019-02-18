@@ -1,0 +1,115 @@
+/*--- Cuerpo ---*/
+.cuerpo{
+	padding-top: 50px;
+	height: calc(100%);
+}
+
+/* CONTENEDOR DERECHO */
+.der-cont{
+	position: relative;
+	min-height:calc(100%);
+	padding-top:60px;
+}
+	/* Barra de busqueda */
+.buscar-curso{
+	width:100%;
+	display:block;
+	overflow:hidden;
+}
+.buscar-curso input{
+	padding:10px;
+	display:block;
+	width:calc(100% - 42px);
+	outline:none;
+	background: #fff;
+	font-size:14px;
+	color:#666;
+	border:1px solid #ccc;
+	border-right:none;
+	font-family:'Open sans';
+	float:left;
+}
+.buscar-curso input:focus, .buscar-curso input:focus + button{
+	border-color: #999;
+}
+.buscar-curso button{
+	background: rgba(0,0,0,.05);
+	color:#666;
+	padding:10.5px 12px;
+	outline:0;
+	font-size:16px;
+	border:1px solid #ccc;
+	float:right;
+}
+
+	/* Discusiones recientes */
+.discusion{
+	width:calc(100% / 2 - 10px);
+	background: #fff;
+	border:1px solid rgba(0,0,0,.1);
+	border-left:5px solid #0c6;
+	margin-top:20px;
+}
+.discusion:nth-child(1),.discusion:nth-child(2){
+	margin-top: 0;
+}
+.discusion a{
+	padding:10px;
+	text-decoration:none;
+	color:#333;
+	display:block;
+}
+.discusion h3{
+	font-weight:lighter;
+	color:#0c6;
+	font-size:18px;
+	padding-bottom:10px;
+}
+.discusion-autor{
+	width:calc(100% - 80px);
+}
+.discusion-info{
+	width:80px;
+}
+.discusion-autor img{
+	display:block;
+	width:30px;
+	height:30px;
+	border:1px solid rgba(0,0,0,.1);
+	border-radius:50%;
+	margin-right: 8px;
+	float:left;
+}
+.discusion-autor h4{
+	width:100%;
+	font-weight: lighter;
+	font-size:.9em;
+	color:#7d7d7d;
+	margin-top:6px;
+}
+.discusion-autor h4 i{
+	color:#00994d;
+}
+.discusion-info p{
+	font-size:.9em;
+	margin-top:6px;
+	color:#0c6;
+	text-align:right;
+}
+
+	/* Sitio desc */
+.sitio-desc{
+	padding:20px;
+	background: url('../img/fondo2.png');
+}
+.sitio-desc > div{
+	width:calc(100% / 3);
+	color:#fff;
+}
+.sitio-desc > div h5{
+	font-size:18px;
+}
+.sitio-desc > div p{
+	font-size:15px;
+	margin-top:10px;
+}

@@ -1,0 +1,40 @@
+/* FOOTER */
+footer{
+	margin-top:60px;
+	background: #1c1c1c;
+	padding-top:10px;
+	overflow:hidden;
+}
+footer .cont-flex ul, footer .margen-general:last-child li{
+	width:calc(100%/3);
+}
+footer ul li{
+	list-style:none;
+	margin-top:5px;
+}
+footer ul li:first-child{
+	margin-top:0;
+}
+footer ul li a{
+	text-decoration:none;
+	display:block;
+	font-size:.9em;
+	color:#0c6;
+}
+footer ul li a:hover{
+	color:#fff;
+}
+footer .margen-general:last-child{
+	margin-top:20px;
+	padding:10px 0;
+	border-top:1px solid rgba(255,255,255,.1);
+}
+footer .margen-general:last-child li{
+	margin-top:0;
+}
+footer .margen-general:last-child li a{
+	color:#ccc;
+}
+footer .margen-general:last-child li a:hover{
+	color:#fff;
+}
