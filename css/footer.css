@@ -1,9 +1,13 @@
 /* FOOTER */
+
 footer{
 	margin-top:60px;
-	background: #1c1c1c;
-	padding-top:10px;
+	background: url("../img/fondo-footer.jpg") no-repeat center;
 	overflow:hidden;
+}
+footer .contenedor-footer{
+	padding:60px 0px;
+	background: rgb(28, 28, 28, 0.8);
 }
 footer .cont-flex ul, footer .margen-general:last-child li{
 	width:calc(100%/3);
