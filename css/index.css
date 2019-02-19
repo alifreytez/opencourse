@@ -1,9 +1,3 @@
-/*--- Cuerpo ---*/
-main{
-	padding-top: 110px;
-	min-height: calc(100%);
-}
-
 	/* Barra de busqueda */
 .buscar-curso{
 	width:100%;
@@ -94,7 +88,6 @@ main{
 	color:#0c6;
 	text-align:right;
 }
-
 
 	/* Sitio desc */
 .sitio-desc{

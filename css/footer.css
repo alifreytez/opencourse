@@ -1,7 +1,6 @@
 /* FOOTER */
 
 footer{
-	margin-top:60px;
 	background: url("../img/fondo-footer.jpg") no-repeat center;
 	overflow:hidden;
 }
@@ -61,4 +60,7 @@ footer .frase{
 footer .derechos a{
 	text-decoration:none;
 	color:#00994d;
+}
+footer .derechos a:hover{
+	color:#0c6;
 }
