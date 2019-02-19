@@ -85,9 +85,15 @@
 					}, 100);
 				}
 			});
-			//Quitamos el margen-right de cada quinto elemento de 'article'
-			/*let quitarMarginArt = document.getElementsByClassName('cont-flex')[0].getElementsByTagName('article');
-			quitarMarginArt[4].style.marginRight = 0;*/
+			//Focus sobre cuadro de busqueda de curso
+			$('.buscar-curso div input').focusin(function(){
+				$('.buscar-curso div').css({'border-color':'#999','box-shadow':'0 2px 7px 1px rgba(0,0,0,.1)'});
+				$('.buscar-curso div button').css('border-left-color','#999');
+			});
+			$('.buscar-curso div input').focusout(function(){
+				$('.buscar-curso div').css({'border-color':'#ccc','box-shadow':'none'});
+				$('.buscar-curso div button').css('border-left-color','#ccc');
+			});
 		});
 	</script>
 	<title>Document</title>
@@ -185,8 +191,10 @@
 		<div class="der-cont">
 			<div class="margen-general">
 				<form action="" autocomplete="off" method="get" class="buscar-curso">
-					<input type="text" id="input-busqueda" name="curso" placeholder="Buscar curso">
-					<button type="input"><i class="fas fa-search"></i></button>
+					<div>
+						<input type="text" id="input-busqueda" name="curso" placeholder="Buscar curso">
+						<button type="input"><i class="fas fa-search"></i></button>
+					</div>
 				</form>
 			</div>
 			<div class="margen-general">

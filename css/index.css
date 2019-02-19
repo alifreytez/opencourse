@@ -14,9 +14,13 @@
 .buscar-curso{
 	width:100%;
 	display:block;
-	overflow:hidden;
 }
-.buscar-curso input{
+.buscar-curso div{
+	width:100%;
+	border:1px solid #ccc;
+	position:relative;
+}
+.buscar-curso div input{
 	padding:10px;
 	display:block;
 	width:calc(100% - 42px);
@@ -24,22 +28,21 @@
 	background: #fff;
 	font-size:14px;
 	color:#666;
-	border:1px solid #ccc;
+	border:none;
 	border-right:none;
 	font-family:'Open sans';
-	float:left;
 }
-.buscar-curso input:focus, .buscar-curso input:focus + button{
-	border-color: #999;
-}
-.buscar-curso button{
+.buscar-curso div button{
 	background: rgba(0,0,0,.05);
 	color:#666;
 	padding:10.5px 12px;
 	outline:0;
 	font-size:16px;
-	border:1px solid #ccc;
-	float:right;
+	border:none;
+	border-left:1px solid #ccc;
+	position:absolute;
+	right:0;
+	top:0;
 }
 
 	/* Discusiones recientes */
