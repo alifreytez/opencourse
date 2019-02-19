@@ -4,12 +4,6 @@ main{
 	min-height: calc(100%);
 }
 
-/* CONTENEDOR DERECHO */
-.der-cont{
-	position: relative;
-	min-height:calc(100%);
-	padding-top:60px;
-}
 	/* Barra de busqueda */
 .buscar-curso{
 	width:100%;
@@ -44,6 +38,7 @@ main{
 	right:0;
 	top:0;
 }
+
 
 	/* Discusiones recientes */
 .discusion{
@@ -99,6 +94,7 @@ main{
 	color:#0c6;
 	text-align:right;
 }
+
 
 	/* Sitio desc */
 .sitio-desc{

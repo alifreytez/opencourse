@@ -6,7 +6,7 @@ footer{
 	overflow:hidden;
 }
 footer .contenedor-footer{
-	padding:60px 0px;
+	padding:100px 0 50px 0;
 	background: rgb(28, 28, 28, 0.8);
 }
 footer .cont-flex ul, footer .margen-general:last-child li{
@@ -14,31 +14,51 @@ footer .cont-flex ul, footer .margen-general:last-child li{
 }
 footer ul li{
 	list-style:none;
-	margin-top:5px;
+	margin-top:10px;
 }
 footer ul li:first-child{
 	margin-top:0;
+	color:#0c6;
+}
+footer .margen-general:first-child ul li:first-child{
+	text-transform:uppercase;
 }
 footer ul li a{
 	text-decoration:none;
 	display:block;
-	font-size:.9em;
-	color:#0c6;
+	font-size:.8em;
+	color:#ccc;
 }
 footer ul li a:hover{
 	color:#fff;
 }
+footer ul:first-child li{
+	text-align:left;
+}
+footer ul:nth-child(2) li{
+	text-align:center;
+}
+footer ul:nth-child(3) li{
+	text-align:right;
+}
+
+/* Segundo bloque footer */
 footer .margen-general:last-child{
-	margin-top:20px;
+	margin-top:40px;
 	padding:10px 0;
-	border-top:1px solid rgba(255,255,255,.1);
 }
-footer .margen-general:last-child li{
-	margin-top:0;
-}
-footer .margen-general:last-child li a{
+footer .derechos, footer .frase{
 	color:#ccc;
+	font-size:.8em;
 }
-footer .margen-general:last-child li a:hover{
-	color:#fff;
+footer .derechos{
+	float:right;
+}
+footer .frase{
+	float:left;
+	font-style: italic;
+}
+footer .derechos a{
+	text-decoration:none;
+	color:#00994d;
 }
