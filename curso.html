@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<link rel="stylesheet" href="css/general.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/header.css"/>
+	<link rel="stylesheet" href="css/footer.css"/>
+	<link rel="stylesheet" href="css/bloque-izq.css"/>
+	<link rel="stylesheet" href="css/cursos-recomendados.css"/>
+	<link rel="stylesheet" href="css/vista-curso.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Poiret+One" rel="stylesheet"/>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			let menuEstado = false;
+
+			// Escuchar el evento click en algún elemento de navegacion
+			$('a').click(function (e){
+				e.preventDefault();
+				let enlace = $(this).attr('href');
+				if(enlace == '#'){
+					return false;
+				} else{
+					window.location.href = enlace;
+				}
+			});
+			//Menu usuario
+			$('.ajuste-cont').click(function (){
+				if(!menuEstado){
+					//Mostrar 'menu usuario'
+					$('#menu-usuario').show(0).delay(100).animate({opacity:1}, 50);
+					menuEstado = true;
+				} else{
+					//Ocultar 'menu usuario'
+					$('#menu-usuario').animate({opacity:0}, 50).delay(100).hide(0);
+					menuEstado = false;
+				}
+			});
+			$("html").click(function(){
+				if(menuEstado){
+					//Ocultar 'menu usuario'
+			    	$("#menu-usuario").animate({opacity:0}, 50).delay(100).hide(0);
+					menuEstado = false;
+				}
+			});
+			$(".ajuste-cont, #menu-usuario").click(function (e){
+				e.stopPropagation();
+			});
+			//Menu sitio web
+			$('.logotipo i').click(function (){
+				//Comprobacion si no tiene puesta la clase "active"
+				if(!$('.logotipo i').hasClass('active')){
+					//Mostrar sección menu
+					$('.izq-cont').show(0).animate({
+						opacity:1
+					}, 10);
+					//Movilizar el menu (disponible)
+					$('.izq-fondo').animate({
+						left: '0',
+					}, 100, function(){
+						$(this).animate({
+							opacity: 1
+						}, 100)
+					});
+					setTimeout(function (){
+						//Agregamos flecha del 'boton menu sitio web'
+						$('.logotipo i').addClass('active');
+					}, 280);
+				} else{
+					//Ocultar sección menu
+					$('.izq-cont').animate({opacity:0}, 50).delay(1000).hide(0);
+					//Movilizar el menu de retorno (indisponible)
+					$('.izq-fondo').animate({
+						left: '-100%'
+					}, 100, function (){
+						$(this).animate({
+							opacity: 0
+						}, 100)
+					});
+					setTimeout(function (){
+						//Removemos flecha del 'boton menu sitio web'
+						$('.logotipo i').removeClass('active', 1000);
+					}, 100);
+				}
+			});
+			//Focus sobre cuadro de busqueda de curso
+			$('.buscar-curso div input').focusin(function(){
+				$('.buscar-curso div').css({'border-color':'#a6a6a6','box-shadow':'0 5px 15px 1px rgba(0,0,0,.1)'});
+				$('.buscar-curso div button').css('border-left-color','#a6a6a6');
+			});
+			$('.buscar-curso div input').focusout(function(){
+				$('.buscar-curso div').css({'border-color':'#ccc','box-shadow':'none'});
+				$('.buscar-curso div button').css('border-left-color','#ccc');
+			});
+		});
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<header>
+		<div class="logotipo">
+			<i class="fas fa-align-center"></i>
+			<p class="nombre-sitio">Freeteach</p>
+			<nav>
+				<ul class="enlaces-sitio">
+					<li><a href="#">Cursos</a></li>
+					<li><a href="#">Enseña</a></li>
+					<li><a href="#">Discusiones</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div></div>
+		<div class="menu-sitio">
+			<ul class="menu-sitio-opciones">
+				<li><a href="index.html"><i class="fas fa-home"></i></a></li>
+				<li><i class="fas fa-bell"></i></li>
+			</ul>
+		</div>
+	</header>
+	<aside class="izq-cont">
+		<div class="izq-fondo">
+			<ul class="menu-usuario">
+				<li class="nombre">
+					<img src="img/user1.jpg" alt="fotografia $user">
+					<div>
+						<span>Jhon Doe <i class="fas fa-award verificado"></i></span>
+						<!--Codigo de busqueda, sera un codigo unico, claro no tendra que ver con el ID de la DB es algo separado, de cada usuario-->
+						<span>#6512</span>
+					</div>
+				</li>
+				<li><a href="perfil.html"><i class="far fa-user-circle"></i>Mi cuenta</a></li>
+				<li><a href="#"><i class="fas fa-heartbeat"></i>Sugerencias</a></li>
+				<!--<li><a href="#"><i class="fas fa-adjust"></i>Modo: <span>Oscuro</span></a></li>-->
+				<li><a href="#"><i class="fas fa-power-off"></i>Cerrar sesión</a></li>
+			</ul>
+			<ul class="info-estado">
+				<li>
+					<p id="misCursos"><i class="fas fa-book-open"></i> Mis cursos</p>
+					<ul class="f-curso">
+						<li>
+							<a href="#"><span>HTML5, CSS3 y JS<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
+							<div class="progress-bar"><div class="progress"></div></div>
+						</li>
+						<li>
+							<a href="#"><span>ReactJs<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
+							<div class="progress-bar"><div class="progress"></div></div>
+						</li>
+						<li>
+							<a href="#"><span>Angular<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
+							<div class="progress-bar"><div class="progress"></div></div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p id="misGruposEstudio"><i class="fas fa-users"></i>Mis grupos de estudio</p>
+					<ul class="f-estudio">
+						<!--<li>
+							<a href="#">+ Crear grupo de estudio</a>
+						</li>-->
+						<li>
+							<a href="#"><span>G- Los maestros<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
+						</li>
+						<li><a href="#"><span>G- Cracksitos por siempre<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
+						</li>
+						<li>
+							<a href="#"><span>G- Equipo Laravel PRO<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p id="misDiscusiones"><i class="fas fa-question-circle"></i> Mis discusiones</p>
+					<ul class="f-discusion">
+						<li>
+							<a href="#">+ Iniciar discusión</a>
+						</li>
+						<li>
+							<a href="#"><span>F- Tengo un problema con Angular, ayuda por favor<i class="fas fa-times remover-seccion"></i></span><span class="res-discusion">Re: <i>2</i></span></a>
+						</li>
+						<li>
+							<a href="#"><span>F- ReactJs no me funciona</span><span class="res-discusion">Re: <i>7</i></span></a>
+							<i class="fas fa-times remover-seccion"></i>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</aside>
+	<main>
+		<div class="margen-general">
+			<div class="cont-flex" id="curso">
+				<div class="curso-desc vista-general">
+					<div class="descripcion">
+						<img src="img/curso-algebra.jpg" alt="">
+						<div class="encabezado">
+						<h2>Álgebra 1</h2>
+						</div>
+						<div class="categoria">
+							<i class="fas fa-calculator"></i> Matemática
+						</div>
+						<p>En este curso aprenderás que el álgebra es la rama de la matemática que estudia la combinación de elementos de estructuras abstractas acorde a ciertas reglas. Originalmente esos elementos podían ser interpretados como números o cantidades, por lo que el álgebra en cierto modo originalmente fue una generalización y extensión de la aritmética. En el álgebra moderna existen áreas del álgebra que en modo alguno pueden considerarse extensiones de la aritmética (álgebra abstracta, álgebra homológica, álgebra exterior, etc.).</p>
+					</div>
+					<div class="info-promocional">
+						<span class="curso-autor">Creado por: <a href="">Al Juarismi <i class="fas fa-award verificado"></i></a></span>
+						<span class="inscriptos">
+							<i class="fas fa-users"></i> Ya son 10.342 estudiantes inscriptos
+						</span>
+						<span class="valoracion">
+							Valoración <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i>
+						</span>
+						<button type="button">Inscríbeme</button>
+					</div>
+				</div>
+			</div>
+			<div class="cont-flex" id="secciones-curso">
+				<div class="curso-desc vista-general">
+					<div class="contenedor-secciones">
+						<nav class="secciones">
+							<ul>
+								<li><a href="#">Índice</a></li>
+								<li><a href="#">Ejercicios</a></li>
+								<li><a href="#">Proyectos</a></li>
+								<li><a href="#">Repositorio</a></li>
+							</ul>
+						</nav>
+						<select class="selector">
+							<option>Unidad 1</option>
+							<option>Unidad 2</option>
+							<option>Unidad 3</option>
+						</select>
+						<div class="contenido">
+							<ol>
+								<li><a href="#">Resolución de ecuaciones binomias</a></li>
+								<li><a href="#">Resolución de ecuaciones trinomias</a></li>
+								<li><a href="#">Transformación de radicales dobles</a></li>
+								<li><a href="#">Progresiones aritméticas</a></li>
+								<li><a href="#">Progresiones geométricas</a></li>
+								<li><a href="#">Logaritmos</a></li>
+								<li><a href="#">Interés compuesto</a></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+<!--	<main>
+		<div class="margen-general">
+			<form action="" autocomplete="off" method="get" class="buscar-curso">
+				<div>
+					<input type="text" id="input-busqueda" name="curso" placeholder="Buscar curso">
+					<button type="input"><i class="fas fa-search"></i></button>
+				</div>
+			</form>
+		</div>
+		<div class="margen-general">
+			<section class="cursos-recomendados">
+				<h2>Cursos recomendados</h2>
+				<div class="cont-flex">
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, optio.</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos earum doloribus nisi aperiam nobis quisquam.</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">NodeJS - Haz único tu servidor, configurándolo desde cero</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, suscipit!</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, quos!</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, optio?</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, vitae!</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, vitae.</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, aut.</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+					<article>
+						<a href="#">
+							<img src="img/curso.jpg" alt="curso tal">
+							<div class="curso-desc">
+								<h3 class="curso-nombre">Lorem ipsum dolor sit amet, consectetur.</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, commodi?</p>
+								<div class="curso-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="curso-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+							</div>
+						</a>
+					</article>
+				</div>
+			</section>
+		</div>
+		<div class="margen-general">
+			<div class="cont-flex sitio-desc">
+				<div>
+					<h5>Cursos gratuitos</h5>
+					<p>Los cursos siempre estarán a tu disposición</p>
+				</div>
+				<div>
+					<h5>Gran comunidad</h5>
+					<p>Todos somos seguidores de la misma pasión</p>
+				</div>
+				<div>
+					<h5>Discusiones generales</h5>
+					<p>Debates, consejos y apoyo sobre diferentes temas</p>
+				</div>
+			</div>
+		</div>
+		<div class="margen-general">
+			<section class="discusiones-recientes">
+				<h2>Discusiones más recientes</h2>
+				<div class="cont-flex">
+					<div class="discusion">
+						<a href="#">
+							<h3>¿Firefox piensa usar el motor Chromium?</h3>
+							<div class="cont-flex">
+								<div class="discusion-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+								<div class="discusion-info">
+									<p>12 resp.</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="discusion">
+						<a href="#">
+							<h3>¿Firefox piensa usar el motor Chromium?</h3>
+							<div class="cont-flex">
+								<div class="discusion-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+								<div class="discusion-info">
+									<p>12 resp.</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="discusion">
+						<a href="#">
+							<h3>¿Firefox piensa usar el motor Chromium?</h3>
+							<div class="cont-flex">
+								<div class="discusion-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+								<div class="discusion-info">
+									<p>12 resp.</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="discusion">
+						<a href="#">
+							<h3>¿Firefox piensa usar el motor Chromium?</h3>
+							<div class="cont-flex">
+								<div class="discusion-autor">
+									<img src="img/user1.jpg" alt="fotografia $user">
+									<h4 class="discusion-autor">Alirio Freytez <i class="fas fa-award verificado"></i></h4>
+								</div>
+								<div class="discusion-info">
+									<p>12 resp.</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>-->
+	<footer>
+		<div class="contenedor-footer">
+			<div class="margen-general">
+				<div class="cont-flex">
+					<ul>
+						<li>Acerca</li>
+						<li><a href="#">Misión</a></li>
+						<li><a href="#">Visión</a></li>
+						<li><a href="#">Miembros</a></li>
+					</ul>
+					<ul>
+						<li>Tutoría</li>
+						<li><a href="#">Conviértete en profesor</a></li>
+						<li><a href="#">Organiza un grupo de estudio</a></li>
+						<li><a href="#">Inicia una discusión</a></li>
+					</ul>
+					<ul>
+						<li>Ayúdanos</li>
+						<li><a href="#">Sugerencias</a></li>
+						<li><a href="#">Donativos</a></li>
+						<li><a href="#">Formar parte</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="margen-general">
+				<p class="frase">El conocimiento nace del pensamiento y éste surge de la información.</p>
+				<p class="derechos">&copy; Freeteach <a href="#">Términos</a> &bull; <a href="#">Privacidad</a></p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
