@@ -11,7 +11,7 @@
 body,html{
 	height: 100%;
 	font: 16px 'Roboto', sans-serif, arial, helvetica;
-	background: ;/*rgba(0,0,0,.02);*/
+	background: url(../img/sand.jpg);/*rgba(0,0,0,.02);*/
 }
 .margen-general{
 	width:80%;
@@ -38,4 +38,7 @@ main{
 	padding-top: 110px;
 	padding-bottom:60px;
 	min-height: calc(100%);
+}
+.verificado{
+	color:#00994d;
 }

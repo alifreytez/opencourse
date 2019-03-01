@@ -103,9 +103,6 @@ nav{
 	margin:0;
 	text-decoration:none;
 }
-.menu-sitio-opciones > li > i:hover{
-	background: rgba(0,0,0,.05);
-}
 .menu-sitio-opciones > li:last-child{
 	margin-right:0;
 }

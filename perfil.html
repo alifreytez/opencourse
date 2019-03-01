@@ -4,98 +4,15 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 	<link rel="stylesheet" href="css/general.css"/>
-	<link rel="stylesheet" href="css/index.css"/>
 	<link rel="stylesheet" href="css/header.css"/>
 	<link rel="stylesheet" href="css/footer.css"/>
+	<link rel="stylesheet" href="css/perfil.css"/>
 	<link rel="stylesheet" href="css/bloque-izq.css"/>
-	<link rel="stylesheet" href="css/cursos-recomendados.css"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Poiret+One" rel="stylesheet"/>
 	<script src="js/jquery-3.2.1.min.js"></script>
-	<script>
-		$(document).ready(function (){
-			let menuEstado = false;
-
-			// Escuchar el evento click en algún elemento de navegacion
-			$('a').click(function (e){
-				e.preventDefault();
-				let enlace = $(this).attr('href');
-				if(enlace == '#'){
-					return false;
-				} else{
-					window.location.href = enlace;
-				}
-			});
-			//Menu usuario
-			$('.ajuste-cont').click(function (){
-				if(!menuEstado){
-					//Mostrar 'menu usuario'
-					$('#menu-usuario').show(0).delay(100).animate({opacity:1}, 50);
-					menuEstado = true;
-				} else{
-					//Ocultar 'menu usuario'
-					$('#menu-usuario').animate({opacity:0}, 50).delay(100).hide(0);
-					menuEstado = false;
-				}
-			});
-			$("html").click(function(){
-				if(menuEstado){
-					//Ocultar 'menu usuario'
-			    	$("#menu-usuario").animate({opacity:0}, 50).delay(100).hide(0);
-					menuEstado = false;
-				}
-			});
-			$(".ajuste-cont, #menu-usuario").click(function (e){
-				e.stopPropagation();
-			});
-			//Menu sitio web
-			$('.logotipo i').click(function (){
-				//Comprobacion si no tiene puesta la clase "active"
-				if(!$('.logotipo i').hasClass('active')){
-					//Mostrar sección menu
-					$('.izq-cont').show(0).animate({
-						opacity:1
-					}, 10);
-					//Movilizar el menu (disponible)
-					$('.izq-fondo').animate({
-						left: '0',
-					}, 100, function(){
-						$(this).animate({
-							opacity: 1
-						}, 100)
-					});
-					setTimeout(function (){
-						//Agregamos flecha del 'boton menu sitio web'
-						$('.logotipo i').addClass('active');
-					}, 280);
-				} else{
-					//Ocultar sección menu
-					$('.izq-cont').animate({opacity:0}, 50).delay(1000).hide(0);
-					//Movilizar el menu de retorno (indisponible)
-					$('.izq-fondo').animate({
-						left: '-100%'
-					}, 100, function (){
-						$(this).animate({
-							opacity: 0
-						}, 100)
-					});
-					setTimeout(function (){
-						//Removemos flecha del 'boton menu sitio web'
-						$('.logotipo i').removeClass('active', 1000);
-					}, 100);
-				}
-			});
-			//Focus sobre cuadro de busqueda de curso
-			$('.buscar-curso div input').focusin(function(){
-				$('.buscar-curso div').css({'border-color':'#a6a6a6','box-shadow':'0 5px 15px 1px rgba(0,0,0,.1)'});
-				$('.buscar-curso div button').css('border-left-color','#a6a6a6');
-			});
-			$('.buscar-curso div input').focusout(function(){
-				$('.buscar-curso div').css({'border-color':'#ccc','box-shadow':'none'});
-				$('.buscar-curso div button').css('border-left-color','#ccc');
-			});
-		});
-	</script>
+	<script src="js/general.js"></script>
+	<script></script>
 	<title>Document</title>
 </head>
 <body>
@@ -189,7 +106,7 @@
 	</aside>
 	<main>
 		<div class="margen-general">
-
+			
 		</div>
 	</main>
 	<footer>

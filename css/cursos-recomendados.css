@@ -5,7 +5,9 @@ section h2{
 }
 article{
 	width:calc(100% / 4 - 20px);
+	max-width:300px;
 	margin-top: 20px;
+	background: #fff;
 }
 article:nth-child(1), article:nth-child(2), article:nth-child(3), article:nth-child(4) {
 	margin-top:0;
@@ -56,7 +58,4 @@ article a > img{
 	font-size:.9em;
 	color:#7d7d7d;
 	margin-top:6px;
-}
-.curso-autor .verificado{
-	color:#00994d;
 }

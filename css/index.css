@@ -1,26 +1,25 @@
 	/* Barra de busqueda */
-.buscar-curso{
+.buscar-curso form{
 	width:100%;
 	display:block;
 }
-.buscar-curso div{
+.buscar-curso form div{
 	width:100%;
 	border:1px solid #ccc;
-	position:relative;
 }
-.buscar-curso div input{
+.buscar-curso form div input{
 	padding:10px;
 	display:block;
-	width:calc(100% - 42px);
+	width:calc(100% - 41px);
 	outline:none;
 	background: #fff;
 	font-size:14px;
-	color:#666;
+	color:#333;
 	border:none;
 	border-right:none;
 	font-family:'Open sans';
 }
-.buscar-curso div button{
+.buscar-curso form div button{
 	background: rgba(0,0,0,.05);
 	color:#666;
 	padding:10.5px 12px;
@@ -28,12 +27,7 @@
 	font-size:16px;
 	border:none;
 	border-left:1px solid #ccc;
-	position:absolute;
-	right:0;
-	top:0;
 }
-
-
 	/* Discusiones recientes */
 .discusion{
 	width:calc(100% / 2 - 10px);
