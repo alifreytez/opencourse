@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<link rel="stylesheet" href="css/registro.css">
 	<link rel="stylesheet" href="css/general.css"/>
 	<link rel="stylesheet" href="css/index.css"/>
 	<link rel="stylesheet" href="css/header.css"/>
@@ -189,9 +190,35 @@
   </aside>
   <main>
     <div class="margen-general">
-      <form class="" action="index.html" method="post">
-        <input type="text" name="" value="">
+			<div class="contenedor-formulario">
+      <h2>¡Estás a un paso de aprender!</h2>
+
+      <form action="#" method="post">
+
+        <div class="controles-formulario">
+
+          <label for="usuario">*Nombre de usuario</label>
+          <input type="text" id="usuario" maxlength="16" placeholder="zorro1" required autofocus tabindex="1">
+
+          <label for="correo">Correo electrónico
+            <a href="#"><span class="signo-pregunta">?</span></a>
+          </label>
+          <input type="email" id="correo" placeholder="zorro1@elgato.com">
+
+          <label for="clave">*Contraseña</label>
+          <input type="password" id="clave" minlength="4" placeholder="Contraseña" required tabindex="2">
+
+        </div>
+
+        <div class="boton-registro">
+          <button type="submit" name="button" tabindex="3">¡Registrame!</button>
+        </div>
+
       </form>
+
+      <span class="datos-requeridos">(*) Son datos requeridos para el registro.</span>
+      <span class="terminos-condiciones">Al registrarte, aceptás los <a href="#">términos y condiciones del sitio.</a></span>
+    </div>
     </div>
   </main>
   <footer>
