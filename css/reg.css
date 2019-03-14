@@ -1,0 +1,217 @@
+body{
+	background: url("../img/fondo-footer.jpg") no-repeat bottom;
+}
+.contenedor-fondo{
+	background: rgba(0,0,0,.2);
+}
+
+/****************************/
+footer,footer .contenedor-footer{
+	background: transparent;
+}
+/****************************/
+header{
+	background: #fff;
+	-webkit-box-shadow: 0 0 8px 3px rgba(0,0,0,.3);
+	box-shadow: 0 0 8px 3px rgba(0,0,0,.3);
+}
+/****************************/
+.contenedor-formulario{
+	min-width: 300px;
+	max-width: 400px;
+	background:#fff;
+	margin: auto;
+	border-top: 10px solid #0c6;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.desc{
+	padding:15px 20px;
+	border-bottom:1px solid rgba(0,0,0,.1);
+	margin-bottom:15px;
+}
+.desc p{
+	margin-top:10px;
+	font-size: 13px;
+	color: #666;
+}
+.desc h2{
+	text-align: center;
+	color: #4d4d4d;
+	font-size:20px;
+}
+form{
+	padding:15px;
+	padding-top:0;
+	display: block;
+	min-width:300px;
+	max-width:400px;
+}
+/* Inputs & Labels*/
+.wrap_box{
+	overflow:hidden;
+	width:100%;
+}
+.box,.box_doble{
+	width:100%;
+}
+.box_doble{
+	width:50%;
+	float:left;
+}
+.wrap_box label,.wrap_box input{
+	font-size: 15px;
+	display: block;
+	padding: 8px;
+	cursor: text;
+	color: #666;
+	outline: none;
+}
+.wrap_box label span,.wrap_box label span{
+	color: #0c6;
+}
+.wrap_box input,.wrap_box input{
+	width: 100%;
+	color: #0c6;
+	border: 1px solid rgba(0,0,0,.2);
+	background: rgba(0,0,0,.03);
+}.box_doble:first-child input{border-right:none;}
+
+.wrap_box .mal-input,.wrap_box .mal-input{color:red;border-color:red;}
+.wrap_box .mal-label,.wrap_box .mal-label{color:#fff;}
+.wrap_box .mal-label span,.wrap_box .mal-label span{color:red;}
+
+
+
+/* The container */
+.container {
+	margin-top:20px;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-size:15px;
+}
+.container a{
+	color:#0c6;
+	text-decoration:none;
+}
+/* Hide the browser's default checkbox */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	border: 1px solid rgba(0,0,0,.2);
+	background: rgba(0,0,0,.03);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+	border-color: #0c6;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+	background-color: #0c6;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+	left: 5px;
+	top: 1px;
+	width: 4px;
+	height: 8px;
+	border: solid white;
+	border-width: 0 3.5px 3.5px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+
+form p{
+	font-size:13px;
+	color:#333;
+	font-weight: bold;
+	text-align: center;
+	margin-top:20px;
+}
+form p span{
+	color:#0c6;
+}
+form > input{
+	width:100%;
+	margin-top:18px;
+	padding:10px;
+	font-size:17px;
+	font-weight: bold;
+	font-family: "Open Sans";
+	color:#fff;
+	background:#0c6;
+	border:none;
+	cursor:pointer;
+}
+form > input:hover{
+	background:#00b359;
+}
+.wrap_opciones{
+	overflow:hidden;
+}
+.volver{
+	display:block;
+	font-size:15px;
+	margin-top:15px;
+	padding-bottom:5px;
+	border-bottom:1px solid rgba(0,0,0,.1);
+	color:#333;
+	text-align:center;
+	text-decoration:none;
+	-webkit-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+} .volver:hover{
+	border-bottom:1px solid #0c6;
+} .volver:first-child{
+	float:left;
+	width:80px;
+} .volver:last-child{
+	float:right;
+	width:115px;
+}
+/* SPINNER */
+.fa-spin{
+	color:#0c6;
+	display:none;
+	float:left;
+	margin-top:15px;
+	margin-left:20px;
+	font-size:23px;
+}
