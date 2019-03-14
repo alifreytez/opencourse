@@ -51,9 +51,11 @@ footer .derechos, footer .frase{
 	font-size:.8em;
 }
 footer .derechos{
+	color: #fff;
 	float:right;
 }
 footer .frase{
+	color: #fff;
 	float:left;
 	font-style: italic;
 }

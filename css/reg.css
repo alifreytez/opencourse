@@ -8,6 +8,7 @@ body{
 /****************************/
 footer,footer .contenedor-footer{
 	background: transparent;
+	padding-top:0;
 }
 /****************************/
 header{
@@ -28,7 +29,6 @@ header{
 .desc{
 	padding:15px 20px;
 	border-bottom:1px solid rgba(0,0,0,.1);
-	margin-bottom:15px;
 }
 .desc p{
 	margin-top:10px;
@@ -39,6 +39,23 @@ header{
 	text-align: center;
 	color: #4d4d4d;
 	font-size:20px;
+}
+.info-contra{
+	background: #f2f2f2;
+	border-bottom:1px solid rgba(0,0,0,.1);
+	padding:15px 20px;
+	margin-bottom:10px;
+}
+.info-contra p, .info-contra li{
+	font-size: 13px;
+	color:#666;
+}
+.info-contra p{
+	margin-bottom:5px;
+}
+.info-contra ul{
+	list-style-type:square;
+	padding-left:25px;
 }
 form{
 	padding:15px;
@@ -77,13 +94,6 @@ form{
 	background: rgba(0,0,0,.03);
 }.box_doble:first-child input{border-right:none;}
 
-.wrap_box .mal-input,.wrap_box .mal-input{color:red;border-color:red;}
-.wrap_box .mal-label,.wrap_box .mal-label{color:#fff;}
-.wrap_box .mal-label span,.wrap_box .mal-label span{color:red;}
-
-
-
-/* The container */
 .container {
 	margin-top:20px;
 	display: block;
@@ -100,7 +110,6 @@ form{
 	color:#0c6;
 	text-decoration:none;
 }
-/* Hide the browser's default checkbox */
 .container input {
 	position: absolute;
 	opacity: 0;
@@ -108,8 +117,6 @@ form{
 	height: 0;
 	width: 0;
 }
-
-/* Create a custom checkbox */
 .checkmark {
 	position: absolute;
 	top: 0;
@@ -119,30 +126,20 @@ form{
 	border: 1px solid rgba(0,0,0,.2);
 	background: rgba(0,0,0,.03);
 }
-
-/* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
 	border-color: #0c6;
 }
-
-/* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
 	background-color: #0c6;
 }
-
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
 	content: "";
 	position: absolute;
 	display: none;
 }
-
-/* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
 	display: block;
 }
-
-/* Style the checkmark/indicator */
 .container .checkmark:after {
 	left: 5px;
 	top: 1px;
@@ -155,17 +152,22 @@ form{
 	transform: rotate(45deg);
 }
 
-
-
-form p{
+form .indicacion{
 	font-size:13px;
 	color:#333;
 	font-weight: bold;
 	text-align: center;
 	margin-top:20px;
 }
-form p span{
+form .condiciones{
+	font-size:14px;
+	color:#666;
+	margin-top:15px;
+	text-align: center;
+}
+form p span,form p a{
 	color:#0c6;
+	text-decoration:none;
 }
 form > input{
 	width:100%;
@@ -183,35 +185,20 @@ form > input:hover{
 	background:#00b359;
 }
 .wrap_opciones{
-	overflow:hidden;
+	margin-top:15px;
+	border-top:1px solid rgba(0,0,0,.1);
 }
-.volver{
+.wrap_opciones a{
 	display:block;
 	font-size:15px;
-	margin-top:15px;
-	padding-bottom:5px;
-	border-bottom:1px solid rgba(0,0,0,.1);
-	color:#333;
-	text-align:center;
+	margin-top:10px;
 	text-decoration:none;
-	-webkit-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
-} .volver:hover{
-	border-bottom:1px solid #0c6;
-} .volver:first-child{
-	float:left;
-	width:80px;
-} .volver:last-child{
-	float:right;
-	width:115px;
+	text-align:center;
+	color:#595959;
 }
-/* SPINNER */
-.fa-spin{
+.wrap_opciones a:first-child,.wrap_opciones a span{
 	color:#0c6;
-	display:none;
-	float:left;
-	margin-top:15px;
-	margin-left:20px;
-	font-size:23px;
+}
+.wrap_opciones a:first-child:hover,.wrap_opciones a:hover span{
+	color:#00994d;
 }

@@ -1,37 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-	<link rel="stylesheet" href="css/registro.css">
-	<link rel="stylesheet" href="css/general.css"/>
-	<link rel="stylesheet" href="css/index.css"/>
-	<link rel="stylesheet" href="css/header.css"/>
-	<link rel="stylesheet" href="css/footer.css"/>
-	<link rel="stylesheet" href="css/bloque-izq.css"/>
-	<link rel="stylesheet" href="css/cursos-recomendados.css"/>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Poiret+One" rel="stylesheet"/>
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script>
-		$(document).ready(function (){
-			let menuEstado = false;
-
-			// Escuchar el evento click en algún elemento de navegacion
-			$('a').click(function (e){
-				e.preventDefault();
-				let enlace = $(this).attr('href');
-				if(enlace == '#'){
-					return false;
-				} else{
-					window.location.href = enlace;
-				}
-			});
-			//Menu usuario
-			$('.ajuste-cont').click(function (){
-				if(!menuEstado){
-					//Mostrar 'menu usuario'
-					$('#menu-usuario').show(0).delay(100).animate({opacity:1}, 50);
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <link rel="stylesheet" href="css/registro.css">
+  <link rel="stylesheet" href="css/general.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/header.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+  <link rel="stylesheet" href="css/bloque-izq.css"/>
+  <link rel="stylesheet" href="css/cursos-recomendados.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Poiret+One" rel="stylesheet"/>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script>  		$('#menu-usuario').show(0).delay(100).animate({opacity:1}, 50);
 					menuEstado = true;
 				} else{
 					//Ocultar 'menu usuario'

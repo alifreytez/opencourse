@@ -2,7 +2,7 @@
 .izq-cont{
 	width:100%;
 	min-height:100%;
-background:rgba(0,0,0,.6);
+	background:rgba(0,0,0,.6);
 	position: fixed;
 	z-index:10;
 	opacity:0;

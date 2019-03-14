@@ -72,6 +72,9 @@ nav{
 }.enlaces-sitio li a.pag-actual{
 	border-bottom:5px solid #0c6;
 }
+.enlaces-sitio li a:hover{
+	color:#0c6;
+}
 /*- OTROS ENLACES -*/
 .menu-sitio{
 	float: right;
@@ -102,6 +105,9 @@ nav{
 	padding:0;
 	margin:0;
 	text-decoration:none;
+}
+.menu-sitio-opciones li a:hover,.menu-sitio-opciones li i:hover{
+	background: rgba(0,0,0,.05);
 }
 .menu-sitio-opciones > li:last-child{
 	margin-right:0;
