@@ -77,88 +77,107 @@
 	<title>Document</title>
 </head>
 <body>
+	<header>
+		<div class="logotipo">
+			<p class="nombre-sitio">Freeteach</p>
+			<nav>
+				<ul class="enlaces-sitio">
+					<li><a href="#">Cursos</a></li>
+					<li><a href="#">Foros</a></li>
+					<li><a href="#">Misión</a></li>
+					<li><a href="#">Equipo</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="menu-sesion">
+			<ul>
+				<li><a href="#">Iniciar sesión</a></li>
+				<li><a href="#">Registrarme</a></li>
+			</ul>
+		</div>
+	</header>
 	<div class="contenedor-fondo">
-	<main>
-		<div class="margen-general">
-			<div class="contenedor-formulario">
-				<div class="desc">
-					<h2>¡Estás a un paso de aprender!</h2>
-					<p>Debes registrarte para poder disfrutar completamente del servicio que proporcionamos.</p>
-				</div>
-				<div class="info-contra">
-					<p>La contraseña debe contener al menos:</p>
-					<ul>
-						<li>Una longitud de 8-15 caracteres.</li>
-						<li>Una letra mayúscula.</li>
-						<li>Un dígito.</li>
-						<li>Un símbolo.</li>
-					</ul>
-				</div>
-				<form name="signup" action="#" method="post" autocomplete="off">
-					<div class="wrap_box">
-						<div class="box_doble">
-							<label for="nombre">Nombre <span>*</span></label>
-							<input type="text" id="nombre" name="nombre" required/>
-						</div>
-						<div class="box_doble">
-							<label for="apellido">Apellido <span>*</span></label>
-							<input type="text" id="apellido" name="apellido" required/>
-						</div>
-					</div>
-					<div class="wrap_box">
-						<div class="box">
-							<label for="correo">Correo <span>*</span></label>
-							<input type="text" id="correo" name="correo" required/>
-						</div>
-					</div>
-					<div class="wrap_box">
-						<div class="box_">
-							<label for="clave">Contraseña <span>*</span></label>
-							<input type="password" id="clave" name="clave" required/>
-						</div>
-					</div>
-					<p class="indicacion">(<span> * </span>) Son datos requeridos para el registro.</p>
-					<input type="hidden" name="tipo" value="reg">
-					<input type="submit" id="submit" name="submit" value="¡Registrarse!"/>
-					<p class="condiciones">Al registrarte, aceptas nuestras <a href="#">Condiciones de uso</a> y <a href="#">Política de privacidad</a>.</p>
-					<div class="wrap_opciones cont-flex">
-						<a href="log.html">¡Ya tengo una cuenta!</a>
-						<a href="#" class="volver">Ir a <span>Inicio</span></a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</main>
-	<footer>
-		<div class="contenedor-footer">
+		<main>
 			<div class="margen-general">
-				<div class="cont-flex">
-					<ul>
-						<li>Acerca</li>
-						<li><a href="#">Misión</a></li>
-						<li><a href="#">Visión</a></li>
-						<li><a href="#">Miembros</a></li>
-					</ul>
-					<ul>
-						<li>Tutoría</li>
-						<li><a href="#">Conviértete en profesor</a></li>
-						<li><a href="#">Organiza un grupo de estudio</a></li>
-						<li><a href="#">Inicia una discusión</a></li>
-					</ul>
-					<ul>
-						<li>Ayúdanos</li>
-						<li><a href="#">Sugerencias</a></li>
-						<li><a href="#">Donativos</a></li>
-						<li><a href="#">Formar parte</a></li>
-					</ul>
+				<div class="contenedor-formulario">
+					<div class="desc">
+						<h2>¡Estás a un paso de aprender!</h2>
+						<p>Debes registrarte para poder disfrutar completamente del servicio que proporcionamos.</p>
+					</div>
+					<div class="info-contra">
+						<p>La contraseña debe contener al menos:</p>
+						<ul>
+							<li>Una longitud de 8-15 caracteres.</li>
+							<li>Una letra mayúscula.</li>
+							<li>Un dígito.</li>
+							<li>Un símbolo.</li>
+						</ul>
+					</div>
+					<form name="signup" action="#" method="post" autocomplete="off">
+						<div class="wrap_box">
+							<div class="box_doble">
+								<label for="nombre">Nombre <span>*</span></label>
+								<input type="text" id="nombre" name="nombre" required/>
+							</div>
+							<div class="box_doble">
+								<label for="apellido">Apellido <span>*</span></label>
+								<input type="text" id="apellido" name="apellido" required/>
+							</div>
+						</div>
+						<div class="wrap_box">
+							<div class="box">
+								<label for="correo">Correo <span>*</span></label>
+								<input type="text" id="correo" name="correo" required/>
+							</div>
+						</div>
+						<div class="wrap_box">
+							<div class="box_">
+								<label for="clave">Contraseña <span>*</span></label>
+								<input type="password" id="clave" name="clave" required/>
+							</div>
+						</div>
+						<p class="indicacion">(<span> * </span>) Son datos requeridos para el registro.</p>
+						<input type="hidden" name="tipo" value="reg">
+						<input type="submit" id="submit" name="submit" value="¡Registrarse!"/>
+						<p class="condiciones">Al registrarte, aceptas nuestras <a href="#">Condiciones de uso</a> y <a href="#">Política de privacidad</a>.</p>
+						<div class="wrap_opciones cont-flex">
+							<a href="log.html">¡Ya tengo una cuenta!</a>
+							<a href="#" class="volver">Ir a <span>Inicio</span></a>
+						</div>
+					</form>
 				</div>
 			</div>
-			<div class="margen-general">
-				<p class="frase">El conocimiento es el hijo del matrimonio de la información y el pensamiento.</p>
-				<p class="derechos">&copy; Freeteach <a href="#">Términos</a> &bull; <a href="#">Privacidad</a></p>
+		</main>
+		<footer>
+			<div class="contenedor-footer">
+				<div class="margen-general">
+					<div class="cont-flex">
+						<ul>
+							<li>Acerca</li>
+							<li><a href="#">Misión</a></li>
+							<li><a href="#">Visión</a></li>
+							<li><a href="#">Miembros</a></li>
+						</ul>
+						<ul>
+							<li>Tutoría</li>
+							<li><a href="#">Conviértete en profesor</a></li>
+							<li><a href="#">Organiza un grupo de estudio</a></li>
+							<li><a href="#">Inicia una discusión</a></li>
+						</ul>
+						<ul>
+							<li>Ayúdanos</li>
+							<li><a href="#">Sugerencias</a></li>
+							<li><a href="#">Donativos</a></li>
+							<li><a href="#">Formar parte</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="margen-general">
+					<p class="frase">El conocimiento es el hijo del matrimonio de la información y el pensamiento.</p>
+					<p class="derechos">&copy; Freeteach <a href="#">Términos</a> &bull; <a href="#">Privacidad</a></p>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 	</div>
 </body>
 </html>

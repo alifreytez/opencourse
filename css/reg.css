@@ -4,9 +4,11 @@ body{
 .contenedor-fondo{
 	background: rgba(0,0,0,.2);
 }
-
+main{
+	padding:100px 0 50px;
+}
 /****************************/
-footer,footer .contenedor-footer{
+footer, footer .contenedor-footer{
 	background: transparent;
 	padding-top:0;
 }
@@ -15,6 +17,38 @@ header{
 	background: #fff;
 	-webkit-box-shadow: 0 0 8px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 8px 3px rgba(0,0,0,.3);
+}
+header .menu-sesion{
+	float: right;
+	padding-right:9px;
+	padding-top:9px;
+}
+header .menu-sesion ul li{
+	float: left;
+	list-style: none;
+}
+header .menu-sesion ul li a{
+	color: #0c6;
+	text-decoration:none;
+	display:block;
+	font-size:15px;
+	padding:6px 11px;
+	border:1px solid #0c6;
+}
+header .menu-sesion ul li:first-child a{
+	border-right:none;
+}
+header .menu-sesion ul li:first-child a:hover{
+	color: #00e673;
+	border-color: #00e673;
+}
+header .menu-sesion ul li:last-child a{
+	background: #0c6;
+	color:#fff;
+}
+header .menu-sesion ul li:last-child a:hover{
+	background: #00e673;
+	border-color: #00e673;
 }
 /****************************/
 .contenedor-formulario{
