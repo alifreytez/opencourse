@@ -1,5 +1,4 @@
 CREATE TABLE role(
-  id SMALLSERIAL UNIQUE PRIMARY KEY,
-  description VARCHAR(),
-  NOT NULL(id, description)
-  )
+  id SMALLSERIAL UNIQUE PRIMARY KEY NOT NULL,
+  description VARCHAR NOT NULL
+  );

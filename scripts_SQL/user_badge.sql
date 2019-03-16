@@ -1,6 +1,5 @@
 CREATE TABLE user_badge(
-  user_id INT REFERENCES usuarios(id),
-  badge_id SMALLINT PRIMARY KEY REFERENCES badge(id),
-  NOT NULL(user_id,badge_id),
-  UNIQUE(badge_id),
-  )
+  user_id INT NOT NULL REFERENCES user(id),
+  badge_id SMALLINT PRIMARY KEY NOT NULL REFERENCES badge(id),
+  UNIQUE(badge_id)
+  );

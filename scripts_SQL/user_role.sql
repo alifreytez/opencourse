@@ -1,5 +1,4 @@
 CREATE TABLE user_role(
-  role_id SMALLINT UNIQUE PRIMARY KEY REFERENCES role(id) ,
-  user_id INT REFERENCES usuarios(id),
-  NOT NULL(role_id, user_id)
-  )
+  role_id SMALLINT UNIQUE PRIMARY KEY NOT NULL REFERENCES role(id) ,
+  user_id INT NOT NULL REFERENCES user(id)
+  );

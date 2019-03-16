@@ -1,8 +1,7 @@
 CREATE TABLE badge(
-  id SMALLSERIAL PRIMARY KEY,
-  name VARCHAR(20),
-  description VARCHAR(255),
-  image_url VARCHAR(100),
-  UNIQUE(id, name, image_url),
-  NOT NULL(id, name, description, image_url)
-  )
+  id SMALLSERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(20) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  image_url VARCHAR(100) NOT NULL,
+  UNIQUE(id, name, image_url)
+  );
