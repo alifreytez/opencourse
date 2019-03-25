@@ -24,6 +24,7 @@
 			});
 		});
 	</script>
+	<link rel="stylesheet" href="css/side-nav.css">
 	<title>Document</title>
 </head>
 <body>
@@ -50,69 +51,59 @@
 	<aside class="izq-cont">
 		<div class="izq-fondo">
 			<ul class="menu-usuario">
-				<li class="nombre">
-					<img src="img/user1.jpg" alt="fotografia $user">
-					<div>
-						<span>Jhon Doe<i class="fas fa-award verificado"></i></span>
-						<!--Codigo de busqueda, sera un codigo unico, claro no tendra que ver con el ID de la DB es algo separado, de cada usuario-->
-						<span>#6512</span>
-					</div>
-				</li>
-				<li><a href="perfil.html"><i class="far fa-user-circle"></i>Mi cuenta</a></li>
-				<li><a href="#"><i class="fas fa-heartbeat"></i>Sugerencias</a></li>
-				<!--<li><a href="#"><i class="fas fa-adjust"></i>Modo: <span>Oscuro</span></a></li>-->
-				<li><a href="#"><i class="fas fa-power-off"></i>Cerrar sesión</a></li>
+
+				<div class="link">
+					<li>
+						<a href="perfil.html">
+							<p class="far fa-user-circle"></p>
+							<br>
+							<span>Perfil</span>
+						</a>
+					</li>
+				</div>
+				<div class="link">
+					<li>
+						<a href="#">
+							<p class="fas fa-book"></p>
+							<br>
+							<span>Cursos</span>
+						</a>
+					</li>
+				</div>
+				<div class="link">
+					<li>
+						<a href="#">
+							<p class="fas fa-users"></p>
+							<br>
+							<span>Grupos</span>
+						</a>
+					</li>
+				</div>
+				<div class="link">
+					<li>
+						<a href="#">
+							<p class="fas fa-question-circle-o"></p>
+							<br>
+							<span>Foros</span>
+						</a>
+					</li>
+				</div>
+				<div class="link">
+					<li>
+						<a href="#">
+							<p class="fas fa-chalkboard-teacher"></p>
+							<br>
+							<span>Enseña</span>
+						</a>
+					</li>
+				</div>
 			</ul>
-			<ul class="info-estado">
-				<li>
-					<p id="misCursos"><i class="fas fa-book-open"></i> Mis cursos</p>
-					<ul class="f-curso">
-						<li>
-							<a href="#"><span>HTML5, CSS3 y JS<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
-							<div class="progress-bar"><div class="progress"></div></div>
-						</li>
-						<li>
-							<a href="#"><span>ReactJs<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
-							<div class="progress-bar"><div class="progress"></div></div>
-						</li>
-						<li>
-							<a href="#"><span>Angular<i class="fas fa-times remover-seccion"></i></span><span class="autor-curso">Alirio</span></a>
-							<div class="progress-bar"><div class="progress"></div></div>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p id="misGruposEstudio"><i class="fas fa-users"></i>Mis grupos de estudio</p>
-					<ul class="f-estudio">
-						<!--<li>
-							<a href="#">+ Crear grupo de estudio</a>
-						</li>-->
-						<li>
-							<a href="#"><span>G- Los maestros<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
-						</li>
-						<li><a href="#"><span>G- Cracksitos por siempre<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
-						</li>
-						<li>
-							<a href="#"><span>G- Equipo Laravel PRO<i class="fas fa-times remover-seccion"></i></span><span class="lider-grupo">Lider Alirio</span></a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p id="misDiscusiones"><i class="fas fa-question-circle"></i> Mis discusiones</p>
-					<ul class="f-discusion">
-						<li>
-							<a href="#">+ Iniciar discusión</a>
-						</li>
-						<li>
-							<a href="#"><span>F- Tengo un problema con Angular, ayuda por favor<i class="fas fa-times remover-seccion"></i></span><span class="res-discusion">Re: <i>2</i></span></a>
-						</li>
-						<li>
-							<a href="#"><span>F- ReactJs no me funciona</span><span class="res-discusion">Re: <i>7</i></span></a>
-							<i class="fas fa-times remover-seccion"></i>
-						</li>
-					</ul>
-				</li>
-			</ul>
+			<div class="logout">
+				<a href="#">
+					<p class="fas fa-power-off "></p>
+					<span>Cerrar sesión</span>
+				</a>
+			</div>
 		</div>
 	</aside>
 	<main>

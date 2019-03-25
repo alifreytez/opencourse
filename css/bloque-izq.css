@@ -91,10 +91,7 @@
 	padding-left:10px;
 }
 .izq-fondo .menu-usuario li:first-child span:last-child{
-	padding-top:3px;
-	color:#00cc66;
-	font-size:.8em;
-	text-transform:uppercase;
+
 }
 .izq-fondo .menu-usuario li img{
 	display:block;
@@ -103,10 +100,9 @@
 	border-radius: 50%;
 	margin:10px 10px 10px 0;
 	float:left;
-}.izq-fondo .menu-usuario li:last-child a{
-	border-top:1px solid rgba(250,250,250,.1);
-	border-bottom:1px solid rgba(250,250,250,.1);
-	padding-top:15px;
+}
+.izq-fondo .menu-usuario li:last-child a{
+	padding-top:30px;
 }
 	/* Cursos */
 .f-curso li{
@@ -128,7 +124,7 @@
 	display:block;
 }
 .f-curso li a span:first-child, .f-estudio li a span:first-child, .f-discusion li a span:first-child{
-	margin-right:15px;	
+	margin-right:15px;
 }
 .f-curso .autor-curso, .f-estudio .lider-grupo, .f-discusion .res-discusion{
 	font-size:.9em;
