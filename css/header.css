@@ -69,11 +69,12 @@ nav{
 	color:#666;
 	padding:10.5px;
 	display:block;
+	margin-right: 10px;
 }.enlaces-sitio li a.pag-actual{
 	border-bottom:5px solid #0c6;
 }
 .enlaces-sitio li a:hover{
-	color:#0c6;
+	background: rgba(0,0,0,.05);
 }
 /*- OTROS ENLACES -*/
 .menu-sitio{
@@ -99,7 +100,8 @@ nav{
 	font-size: 1.1em;
 	text-align:center;
 	padding-top:8px;
-	border-radius: 50%;
+	/*border-radius: 50%;*/
+	transition-timing-function: ease;
 }
 .menu-sitio-opciones > li > a{
 	padding:0;
